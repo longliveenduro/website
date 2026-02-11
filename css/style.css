@@ -11,28 +11,38 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.3em;
+  line-height: 1.4em;
   margin: 0;
-  font-size: 12px;
-  color: #333;
-  background: #333;
+  font-size: 13px;
+  color: #e0e0e0;
+  /* Dark Mode Text */
+  background: #0d0d0d;
+  /* Dark Mode Background */
   padding: 10px 0;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   text-decoration: none;
   font-weight: normal;
-  color: #135cae;
+  color: #66b3ff;
+  /* Lighter Blue for Dark Mode */
 }
 
 a:hover {
   text-decoration: underline;
   font-weight: normal;
-  color: #0b3768;
+  color: #99ccff;
 }
 
-p { margin-top: 0; margin-bottom: 5px; }
-img { border: 0 none; }
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+img {
+  border: 0 none;
+}
 
 /* --- Layout --- */
 div.center {
@@ -44,21 +54,62 @@ div#wrapper {
   margin-right: auto;
   min-width: 750px;
   max-width: 1050px;
-  background: #f7f7f7 url(../img/theme/mw_shadow_l.png) 0 0 repeat-y;
+  background: #1a1a1a;
+  /* Dark content background */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+  border-radius: 10px;
+  position: relative;
+  /* Context for light cone */
+  overflow: hidden;
+  /* Contain light cone */
+}
+
+/* Light Cone Effect */
+/* Light Cone Effect - Refined */
+div#wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  /* Conic gradient to simulate a beam, radial gradient to fade it out */
+  background: radial-gradient(circle at 120px 50px, rgba(255, 245, 200, 0.25) 0%, rgba(255, 245, 200, 0) 50%);
+  filter: blur(15px);
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: screen;
+}
+
+div#wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  /* Beam definition */
+  background: conic-gradient(from 140deg at 120px 50px, transparent 0deg, rgba(255, 245, 200, 0.15) 15deg, transparent 30deg);
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: screen;
 }
 
 div#wrapper_r {
-  background: url(../img/theme/mw_shadow_r.png) 100% 0 repeat-y;
+  /* Removed legacy background */
 }
 
 /* --- Header --- */
 div#header {
-  background: url(../img/theme/mw_header_t.png) 0 0 repeat-x;
+  /* Removed legacy background */
+  position: relative;
 }
 
 div#header_l {
+  /* Removed legacy background */
   position: relative;
-  background: url(../img/theme/mw_header_t_l.png) 0 0 no-repeat;
 }
 
 div#header_r {
@@ -68,7 +119,7 @@ div#header_r {
   padding-top: 25px;
   overflow: hidden;
   text-align: left;
-  background: url(../img/theme/mw_header_t_r.png) 100% 0 no-repeat;
+  /* Removed legacy background */
 }
 
 div#logo {
@@ -81,22 +132,21 @@ div#logo {
   background: url(../img/theme/desklamp.png) 0 0 no-repeat;
   margin-left: 30px;
   margin-top: 25px;
+  z-index: 1000;
 }
 
 /* --- Tab Area / Navigation Bar --- */
 div#tabarea {
-  background: #f7f7f7 url(../img/theme/mw_header_b.png) 0 0 repeat-x;
   margin: 0 11px;
+  border-bottom: 1px solid #444;
 }
 
 div#tabarea_l {
-  background: url(../img/theme/mw_header_l_b.png) 0 0 no-repeat;
   padding-left: 32px;
 }
 
 div#tabarea_r {
   height: 42px;
-  background: url(../img/theme/mw_header_r_b.png) 100% 0 no-repeat;
   padding-right: 1px;
 }
 
@@ -108,20 +158,17 @@ table.pill {
 }
 
 td.pill_l {
-  background: url(../img/theme/mw_menu_cap_l.png) no-repeat;
   width: 20px;
   height: 32px;
 }
 
 td.pill_m {
-  background: url(../img/theme/mw_menu_normal_bg.png) repeat-x;
   padding: 0;
   margin: 0;
   width: auto;
 }
 
 td.pill_r {
-  background: url(../img/theme/mw_menu_cap_r.png) no-repeat;
   width: 19px;
   height: 32px;
 }
@@ -140,21 +187,25 @@ td.pill_r {
 
 #pillmenu li {
   float: left;
-  background: url(../img/theme/mw_menu_separator.png) top right no-repeat;
+  border-right: 1px solid #444;
   margin: 0;
   padding: 0;
 }
 
+#pillmenu li:last-child {
+  border-right: none;
+}
+
 #pillmenu a {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   float: left;
   display: block;
   height: 24px;
   line-height: 24px;
   padding: 0 20px;
-  color: #000;
+  color: #ccc;
   text-decoration: none;
 }
 
@@ -166,7 +217,8 @@ td.pill_r {
   margin-top: 2px;
   height: 21px;
   line-height: 21px;
-  background: url(../img/theme/mw_menu_active_bg.png) 0 0 repeat-x;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
   color: #fff;
 }
 
@@ -177,7 +229,7 @@ td.pill_r {
 /* --- Content Area --- */
 #whitebox {
   margin: 0 21px;
-  background: #fff;
+  background: transparent;
   width: auto;
 }
 
@@ -186,38 +238,38 @@ td.pill_r {
 }
 
 #whitebox_t {
-  background: #fff url(../img/theme/mw_content_t.png) 0 0 repeat-x;
+  /* Removed background */
 }
 
 #whitebox_tl {
-  background: url(../img/theme/mw_content_t_l.png) 0 0 no-repeat;
+  /* Removed background */
 }
 
 #whitebox_tr {
   height: 10px;
   overflow: hidden;
-  background: url(../img/theme/mw_content_t_r.png) 100% 0 no-repeat;
+  /* Removed background */
 }
 
 #whitebox_m {
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
   width: auto;
   padding: 1px 8px;
 }
 
 #whitebox_b {
   margin-top: -5px;
-  background: url(../img/theme/mw_content_b.png) 0 100% repeat-x;
+  /* Removed background */
 }
 
 #whitebox_bl {
-  background: url(../img/theme/mw_content_b_l.png) 0 100% no-repeat;
+  /* Removed background */
 }
 
 #whitebox_br {
   height: 13px;
-  background: url(../img/theme/mw_content_b_r.png) 100% 100% no-repeat;
+  /* Removed background */
 }
 
 /* --- Columns --- */
@@ -248,18 +300,19 @@ td.pill_r {
 
 /* --- Footer --- */
 div#footer {
-  background: #f7f7f7 url(../img/theme/mw_footer_b.png) 0 100% repeat-x;
+  /* Removed background */
+  border-top: 1px solid #333;
 }
 
 div#footer_l {
-  background: url(../img/theme/mw_footer_b_l.png) 0 0 no-repeat;
+  /* Removed background */
 }
 
 div#footer_r {
   padding-top: 10px;
   height: 47px;
   overflow: hidden;
-  background: url(../img/theme/mw_footer_b_r.png) 100% 0 no-repeat;
+  /* Removed background */
 }
 
 div#footer_r div {
@@ -268,7 +321,8 @@ div#footer_r div {
   color: #aaa;
 }
 
-div#footer_r a:link, div#footer_r a:visited {
+div#footer_r a:link,
+div#footer_r a:visited {
   color: #999;
 }
 
@@ -285,39 +339,43 @@ div#footerspacer {
 h1 {
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: bold;
   vertical-align: bottom;
-  color: #666;
+  color: #fff;
   text-align: left;
   width: 100%;
 }
 
-h2, .contentheading {
+h2,
+.contentheading {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: normal;
   vertical-align: bottom;
-  color: #333;
+  color: #eee;
   text-align: left;
   width: 100%;
 }
 
-h3, .componentheading, table.moduletable th, legend {
+h3,
+.componentheading,
+table.moduletable th,
+legend {
   margin: 0;
   font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   padding-left: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: left;
-  color: #135cae;
+  color: #b3b3b3;
 }
 
 h4 {
   font-family: Arial, Helvetica, sans-serif;
-  color: #333;
+  color: #eee;
 }
 
 table.contentpaneopen h3 {
@@ -338,10 +396,27 @@ table.nopad {
   margin-bottom: 15px;
 }
 
-table.contentpaneopen, table.contentpane {
+table.contentpaneopen,
+table.contentpane {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+/* Override legacy inline styles for Dark Mode */
+table.contentpaneopen td,
+table.contentpaneopen tr,
+table.contentpaneopen table,
+table.contentpaneopen tbody {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+/* Specific override for the grey headers in CV */
+td[bgcolor="#e0e0e0"] {
+  background-color: #333 !important;
+  color: #fff !important;
 }
 
 table.contentpaneopen li {
@@ -354,7 +429,8 @@ table.contentpaneopen fieldset {
 }
 
 /* --- Sidebar Module --- */
-div.moduletable, div.module {
+div.moduletable,
+div.module {
   margin-bottom: 25px;
 }
 
@@ -371,7 +447,7 @@ span.article_separator {
 /* --- Small Text --- */
 .small {
   font-size: .90em;
-  color: #999;
+  color: #888;
   font-weight: normal;
   text-align: left;
 }
@@ -426,4 +502,5 @@ fieldset {
 legend {
   margin: 0;
   padding: 0 10px;
+  color: #ccc;
 }
