@@ -1,14 +1,46 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
       "source": "/chris-wewerka.de/:path*",
       "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/contact-details",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-details.html",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/index.php/profile",
+      "destination": "/profile.html",
+      "permanent": true
+    },
+    {
+      "source": "/index.php/profile.html",
+      "destination": "/profile.html",
+      "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/article/2/:path*",
+      "destination": "/downloads/certificates/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/article/7/:path*",
+      "destination": "/downloads/cv/:path*",
       "permanent": true
     }
   ],

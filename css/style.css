@@ -1,0 +1,429 @@
+/* ==========================================================================
+   Chris Wewerka - Consolidated Stylesheet
+   Merged from legacy Joomla Milky Way template (black theme)
+   ========================================================================== */
+
+/* --- Core Setup --- */
+html {
+  height: 100%;
+  margin-bottom: 1px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3em;
+  margin: 0;
+  font-size: 12px;
+  color: #333;
+  background: #333;
+  padding: 10px 0;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  font-weight: normal;
+  color: #135cae;
+}
+
+a:hover {
+  text-decoration: underline;
+  font-weight: normal;
+  color: #0b3768;
+}
+
+p { margin-top: 0; margin-bottom: 5px; }
+img { border: 0 none; }
+
+/* --- Layout --- */
+div.center {
+  text-align: center;
+}
+
+div#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 750px;
+  max-width: 1050px;
+  background: #f7f7f7 url(../img/theme/mw_shadow_l.png) 0 0 repeat-y;
+}
+
+div#wrapper_r {
+  background: url(../img/theme/mw_shadow_r.png) 100% 0 repeat-y;
+}
+
+/* --- Header --- */
+div#header {
+  background: url(../img/theme/mw_header_t.png) 0 0 repeat-x;
+}
+
+div#header_l {
+  position: relative;
+  background: url(../img/theme/mw_header_t_l.png) 0 0 no-repeat;
+}
+
+div#header_r {
+  height: 90px;
+  padding-left: 370px;
+  padding-right: 30px;
+  padding-top: 25px;
+  overflow: hidden;
+  text-align: left;
+  background: url(../img/theme/mw_header_t_r.png) 100% 0 no-repeat;
+}
+
+div#logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;
+  width: 158px;
+  height: 95px;
+  background: url(../img/theme/desklamp.png) 0 0 no-repeat;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+
+/* --- Tab Area / Navigation Bar --- */
+div#tabarea {
+  background: #f7f7f7 url(../img/theme/mw_header_b.png) 0 0 repeat-x;
+  margin: 0 11px;
+}
+
+div#tabarea_l {
+  background: url(../img/theme/mw_header_l_b.png) 0 0 no-repeat;
+  padding-left: 32px;
+}
+
+div#tabarea_r {
+  height: 42px;
+  background: url(../img/theme/mw_header_r_b.png) 100% 0 no-repeat;
+  padding-right: 1px;
+}
+
+/* --- Pill Menu --- */
+table.pill {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+td.pill_l {
+  background: url(../img/theme/mw_menu_cap_l.png) no-repeat;
+  width: 20px;
+  height: 32px;
+}
+
+td.pill_m {
+  background: url(../img/theme/mw_menu_normal_bg.png) repeat-x;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+td.pill_r {
+  background: url(../img/theme/mw_menu_cap_r.png) no-repeat;
+  width: 19px;
+  height: 32px;
+}
+
+#pillmenu {
+  white-space: nowrap;
+  height: 32px;
+  float: left;
+}
+
+#pillmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#pillmenu li {
+  float: left;
+  background: url(../img/theme/mw_menu_separator.png) top right no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+#pillmenu a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+#pillmenu a:hover {
+  color: #135cae;
+}
+
+#pillmenu a#active_menu-nav {
+  margin-top: 2px;
+  height: 21px;
+  line-height: 21px;
+  background: url(../img/theme/mw_menu_active_bg.png) 0 0 repeat-x;
+  color: #fff;
+}
+
+#pillmenu a#active_menu-nav:hover {
+  color: #fff;
+}
+
+/* --- Content Area --- */
+#whitebox {
+  margin: 0 21px;
+  background: #fff;
+  width: auto;
+}
+
+#whitebox div {
+  text-align: left;
+}
+
+#whitebox_t {
+  background: #fff url(../img/theme/mw_content_t.png) 0 0 repeat-x;
+}
+
+#whitebox_tl {
+  background: url(../img/theme/mw_content_t_l.png) 0 0 no-repeat;
+}
+
+#whitebox_tr {
+  height: 10px;
+  overflow: hidden;
+  background: url(../img/theme/mw_content_t_r.png) 100% 0 no-repeat;
+}
+
+#whitebox_m {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: auto;
+  padding: 1px 8px;
+}
+
+#whitebox_b {
+  margin-top: -5px;
+  background: url(../img/theme/mw_content_b.png) 0 100% repeat-x;
+}
+
+#whitebox_bl {
+  background: url(../img/theme/mw_content_b_l.png) 0 100% no-repeat;
+}
+
+#whitebox_br {
+  height: 13px;
+  background: url(../img/theme/mw_content_b_r.png) 100% 100% no-repeat;
+}
+
+/* --- Columns --- */
+#area {
+  padding: 0;
+}
+
+#leftcolumn {
+  padding: 0;
+  margin: 0;
+  width: 20%;
+  float: left;
+}
+
+#maincolumn {
+  margin-left: 20%;
+  padding-left: 15px;
+  width: 75%;
+}
+
+#leftcolumn div.module {
+  padding: 0 10px;
+}
+
+#leftcolumn div.module table {
+  width: auto;
+}
+
+/* --- Footer --- */
+div#footer {
+  background: #f7f7f7 url(../img/theme/mw_footer_b.png) 0 100% repeat-x;
+}
+
+div#footer_l {
+  background: url(../img/theme/mw_footer_b_l.png) 0 0 no-repeat;
+}
+
+div#footer_r {
+  padding-top: 10px;
+  height: 47px;
+  overflow: hidden;
+  background: url(../img/theme/mw_footer_b_r.png) 100% 0 no-repeat;
+}
+
+div#footer_r div {
+  text-align: center;
+  font-size: .90em;
+  color: #aaa;
+}
+
+div#footer_r a:link, div#footer_r a:visited {
+  color: #999;
+}
+
+div#footerspacer {
+  height: 10px;
+}
+
+#syndicate {
+  float: left;
+  padding-left: 25px;
+}
+
+/* --- Typography --- */
+h1 {
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  vertical-align: bottom;
+  color: #666;
+  text-align: left;
+  width: 100%;
+}
+
+h2, .contentheading {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
+  vertical-align: bottom;
+  color: #333;
+  text-align: left;
+  width: 100%;
+}
+
+h3, .componentheading, table.moduletable th, legend {
+  margin: 0;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  padding-left: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #135cae;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+table.contentpaneopen h3 {
+  margin-top: 25px;
+}
+
+table.contentpaneopen h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+/* --- Content Tables --- */
+table.nopad {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+table.contentpaneopen, table.contentpane {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table.contentpaneopen li {
+  margin-bottom: 5px;
+}
+
+table.contentpaneopen fieldset {
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* --- Sidebar Module --- */
+div.moduletable, div.module {
+  margin-bottom: 25px;
+}
+
+/* --- Spacers & Utilities --- */
+span.article_separator {
+  display: block;
+  height: 20px;
+}
+
+.clr {
+  clear: both;
+}
+
+/* --- Small Text --- */
+.small {
+  font-size: .90em;
+  color: #999;
+  font-weight: normal;
+  text-align: left;
+}
+
+/* --- Sidebar Menu (left column) --- */
+#leftcolumn ul.menu {
+  margin: 10px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+#leftcolumn ul.menu li {
+  margin-bottom: 3px;
+}
+
+#leftcolumn ul.menu li a:link,
+#leftcolumn ul.menu li a:visited {
+  font-weight: bold;
+}
+
+/* --- Blog/Content table --- */
+table.blog {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* --- Pathway --- */
+#pathway {
+  padding: 0 10px 8px;
+  width: auto;
+  margin-top: -2px;
+  text-align: left;
+}
+
+#search {
+  float: right;
+  width: 320px;
+  margin-top: -20px;
+  margin-right: 30px;
+  height: 40px;
+  overflow: hidden;
+  text-align: right;
+}
+
+/* --- Fieldset --- */
+fieldset {
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+legend {
+  margin: 0;
+  padding: 0 10px;
+}
