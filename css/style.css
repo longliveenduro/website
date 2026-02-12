@@ -504,3 +504,190 @@ legend {
   padding: 0 10px;
   color: #ccc;
 }
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+
+  /* Reset fixed widths */
+  div#wrapper {
+    min-width: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  body {
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  /* Header adjustments */
+  div#header_r {
+    padding: 20px 10px;
+    height: auto;
+    text-align: center;
+  }
+  
+  div#logo {
+    position: relative;
+    float: none;
+    margin: 0 auto 10px auto;
+    left: auto;
+    top: auto;
+    display: block;
+  }
+
+  /* Search bar stacking */
+  #search {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    height: auto;
+  }
+
+  /* Navigation (Pill Menu) */
+  div#tabarea {
+    margin: 0; /* Remove side margins */
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  div#tabarea_r, div#tabarea_l {
+    padding: 0;
+    height: auto;
+  }
+
+  table.pill {
+    width: 100%;
+  }
+  
+  td.pill_l, td.pill_r {
+    display: none; /* Hide rounded corners on mobile if they cause issues, or keep them if they fit. Hiding for simplicity/space. */
+  }
+
+  td.pill_m {
+    width: 100%;
+    display: block;
+  }
+
+  #pillmenu {
+    height: auto;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  #pillmenu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #pillmenu li {
+    float: none;
+    border-right: none;
+    margin: 5px;
+    background: #333; /* Give them a background so they look like buttons */
+    border-radius: 4px;
+  }
+  
+  #pillmenu a {
+    float: none;
+    display: block;
+    padding: 0 10px;
+  }
+
+  /* Content Layout */
+  #whitebox {
+    margin: 0;
+    width: 100%;
+  }
+
+  #whitebox_m {
+    padding: 10px;
+  }
+
+  /* Stack Columns */
+  #area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #maincolumn {
+    margin-left: 0;
+    width: 100% !important; /* Override inline styles or css width */
+    padding-left: 0;
+    order: 1; /* Main content first */
+  }
+
+  #leftcolumn {
+    width: 100%;
+    float: none;
+    order: 2; /* External profiles below */
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+  }
+
+  /* Fix Profile/CV Tables */
+  table {
+    width: 100% !important;
+  }
+  
+  /* Project Overview Table in Profile */
+  /* Target the specific heavy tables. We can try a generic approach for contentpaneopen tables with borders */
+  table[width="639"], table.contentpaneopen table {
+     width: 100% !important;
+     border-collapse: separate !important;
+     border-spacing: 0 15px !important; /* Space between "cards" if they were rows, but we use blocks */
+  }
+
+  /* Responsive Tables: Stack cells for small screens */
+  /* Specifically for the project overview which has 2 columns: Date/Role and Description */
+  
+  tr[valign="TOP"] {
+    display: block;
+    background: #222; /* Card Background */
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  tr[valign="TOP"] > td {
+    display: block;
+    width: 100% !important;
+    border: none !important;
+    padding: 15px !important;
+    box-sizing: border-box;
+  }
+
+  /* Date/Role section (first cell) */
+  tr[valign="TOP"] > td:first-child {
+    background-color: #2a2a2a; /* Slightly lighter/different for header part */
+    border-bottom: 1px solid #444 !important;
+    color: #fff;
+  }
+
+  /* Description section (second cell) */
+  tr[valign="TOP"] > td:last-child {
+     padding-top: 10px !important;
+  }
+
+  /* Internal list styling in cards */
+  tr[valign="TOP"] td ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+
+  /* Typography */
+  h1, h2, h3 {
+    word-wrap: break-word;
+  }
+  
+}
